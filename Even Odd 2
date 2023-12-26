@@ -1,0 +1,28 @@
+///Before solving this type of problem you have to know String and how it works
+///Also note, if you don't understand this problem don't be hopeless because this problem is not like beginner-friendly:
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int t;
+    char c[101];
+    scanf("%d",&t);
+
+    for(int i=1; i<=t; i++)
+    {
+        scanf("%s",&c);
+
+        int len= strlen(c);
+        int ldigit= (c[len-1])-48;
+
+        if(ldigit%2!=0)
+        {
+            printf("odd\n");
+        }
+
+        else
+        {
+            printf("even\n");
+        }
+    }
+}
