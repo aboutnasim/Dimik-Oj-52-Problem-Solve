@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long long t,i,j,n;
+
+    scanf("%lld",&t);
+    for(i=1; i<=t; i++)
+    {
+        long long x;
+        scanf("%d",&n);
+        
+        x = sqrt(n);
+
+        if(n == (x*x)) printf("YES\n");
+        else printf("NO\n");
+    }
+}
