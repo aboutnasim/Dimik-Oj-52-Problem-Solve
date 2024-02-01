@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define endl "\n"
+#define mem(a,b) memset(a,b,sizeof(a))
+#define sqr(a) (a*a)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
+
+
+
+
+
+int main()
+{
+    optimize();
+
+    string s;
+    cin>>s;
+
+    int digitsum=0;
+
+    for(int i=0; i<s.size(); i++)
+    {
+        digitsum+=s[i]-'0';
+    }
+
+    string t= to_string(digitsum);
+    string tmp=t;
+
+    reverse(tmp.begin(), tmp.end());
+
+    if(t==tmp)cout<<"1"<<endl;
+    else cout<<"0"<<endl;
+
+    return 0;
+}
