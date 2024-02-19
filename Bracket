@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define endl "\n"
+#define mem(a,b) memset(a,b,sizeof(a))
+#define sqr(a) (a*a)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
+
+
+bool isbalanced(char c1, char c2)
+{
+    return (c1=='(' && c2==')') || (c1=='{' && c2=='}') || (c1=='[' && c2==']');
+}
+
+int main()
+{
+    optimize();
+    int t;
+    cin>>t;
+    bool done=1;
+    while(t--)
+    {
+        stack<char> st;
+        string s;
+        cin>>s;
+
+        for(auto u:s)
+        {
+            if(u=='(' || u=='{' || u=='[')
+            {
+                st.push(u);
+            }
+
+            else
+            {
+                if(st.empty())
+                {
+                    done=0;
+                    break;
+                }
+
+                else
+                {
+                    if(isbalanced(st.top(),u))
+                    {
+                        st.pop();
+                    }
+
+                    else
+                    {
+                        done=0;
+                        break;
+                    }
+                }
+            }
+        }
+        if(!st.empty()) done=0;
+        if(done) cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+    }
+    return 0;
+}
