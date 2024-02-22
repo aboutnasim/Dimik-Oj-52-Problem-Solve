@@ -1,0 +1,23 @@
+class Solution
+{
+    public:
+    queue<int> rev(queue<int> q)
+    {
+        stack<int> st;
+        queue<int> ret;
+        
+        while(!q.empty())
+        {
+            st.push(q.front());
+            q.pop();
+        }
+        
+        while(!st.empty())
+        {
+            ret.push(st.top());
+            st.pop();
+        }
+        
+        return ret;
+    }
+};
